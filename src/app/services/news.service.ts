@@ -10,7 +10,11 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-  getNews(soort: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}${soort}stories.json`);
+  getNews(soort: string): Observable<number[]> {
+    return this.http.get<number[]>(`${this.baseUrl}${soort}stories.json`);
+  }
+
+  getStory(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}item/${id}.json`);
   }
 }

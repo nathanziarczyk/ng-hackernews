@@ -1,0 +1,8 @@
+<div class="news-item" *ngIf="newsItem.id">
+  <h2 class="title">
+    <a href="{{ newsItem.url }}" target="_blank" rel="noreferrer noopener">
+      {{ newsItem.title }}
+    </a>
+  </h2>
+  <small>By: {{ newsItem.by }}</small>
+</div>
