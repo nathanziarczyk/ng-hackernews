@@ -24,13 +24,13 @@ export class WrapperComponent implements OnInit {
       window.innerHeight + window.scrollY >= document.body.offsetHeight &&
       !this.loading
     ) {
-      this.loading = true;
       this.count += 10;
       this.getNews();
     }
   }
 
   getNews(emitted: boolean = false): void {
+    this.loading = true;
     if (emitted) this.count = 10;
     this.newsService.getNews().subscribe((n) => {
       this.news = n;

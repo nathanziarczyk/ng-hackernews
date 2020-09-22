@@ -1,2 +1,5 @@
-<app-header (getNews)="getNews($event)"></app-header>
-<app-news-list [news]="newsToShow"></app-news-list>
+<div>
+  <div *ngIf="loading" class="loading-overlay"></div>
+  <app-header (getNews)="getNews($event)"></app-header>
+  <app-news-list [news]="newsToShow"></app-news-list>
+</div>
