@@ -22,6 +22,6 @@ export class HeaderComponent implements OnInit {
 
   changeSoort(soort) {
     this.newsService.changeSoort(soort);
-    this.getNews.emit();
+    this.getNews.emit(true);
   }
 }

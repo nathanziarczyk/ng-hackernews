@@ -11,7 +11,5 @@ export class NewsListComponent implements OnInit {
 
   constructor(private newsService: NewsService) {}
 
-  ngOnInit(): void {
-    console.log(this.news);
-  }
+  ngOnInit(): void {}
 }
