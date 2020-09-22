@@ -13,4 +13,11 @@ body {
 .container {
   width: 850px;
   margin: 0 auto;
+
+  @media screen and (max-width: 900px) {
+    width: 600px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 98%;
+  }
 }
