@@ -1,8 +1,8 @@
 <div class="header">
   <h1>HackerNews</h1>
   <nav>
-    <a class="active">New</a>
-    <a>Best</a>
-    <a>Top</a>
+    <a [ngClass]="setClasses('new')" (click)="changeSoort('new')"> New </a>
+    <a [ngClass]="setClasses('best')" (click)="changeSoort('best')">Best</a>
+    <a [ngClass]="setClasses('top')" (click)="changeSoort('top')">Top</a>
   </nav>
 </div>
