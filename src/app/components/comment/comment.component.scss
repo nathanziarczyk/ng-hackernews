@@ -10,3 +10,24 @@
 .comment-author {
   font-weight: bold;
 }
+
+.comment-text {
+  &.collapsed {
+    max-height: 48px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+
+    // &:hover {
+    //   max-height: 800px;
+    //   transition: max-height 0.5s ease-in;
+    // }
+  }
+}
+
+a {
+  color: blue;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

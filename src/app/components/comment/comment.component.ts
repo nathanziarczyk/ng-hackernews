@@ -22,11 +22,26 @@ export class CommentComponent implements OnInit {
   }
 
   resolveObservables() {
-    const resolveThis = this.commentObservables.slice(0, 3);
-    this.commentObservables = this.commentObservables.slice(3);
+    const resolveThis = this.commentObservables.slice(0, 1);
+    this.commentObservables = this.commentObservables.slice(1);
     forkJoin(resolveThis).subscribe((res) => {
       const comments = Object.values(res);
       this.commentsToShow = comments;
     });
+  }
+
+  setClasses(text) {
+    console.log(text);
+    if (text && text.length > 130) {
+      return {
+        'comment-text': true,
+        collapsed: true,
+      };
+    }
+
+    return {
+      'comment-text': true,
+      collapsed: false,
+    };
   }
 }
