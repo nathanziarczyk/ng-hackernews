@@ -29,19 +29,4 @@ export class CommentComponent implements OnInit {
       this.commentsToShow = comments;
     });
   }
-
-  setClasses(text) {
-    console.log(text);
-    if (text && text.length > 130) {
-      return {
-        'comment-text': true,
-        collapsed: true,
-      };
-    }
-
-    return {
-      'comment-text': true,
-      collapsed: false,
-    };
-  }
 }

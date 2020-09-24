@@ -1,8 +1,5 @@
-<div class="comment-item" *ngFor="let comment of commentsToShow">
-  <p class="comment-author">{{ comment.by }}</p>
-  <p [innerHtml]="comment.text" [ngClass]="setClasses(comment.text)"></p>
-  <a class="read-more" *ngIf="comment.text && comment.text.length > 130"
-    >Read more...</a
-  >
-  <app-comment *ngIf="comment.kids" [comments]="comment.kids"></app-comment>
+<div *ngFor="let comment of commentsToShow">
+  <div class="comment-item" *ngIf="comment.text">
+    <app-comment-item [comment]="comment"></app-comment-item>
+  </div>
 </div>
