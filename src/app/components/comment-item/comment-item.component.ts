@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { formatDistance, fromUnixTime } from 'date-fns';
 @Component({
   selector: 'app-comment-item',
   templateUrl: './comment-item.component.html',
@@ -8,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CommentItemComponent implements OnInit {
   @Input() comment;
   collapsed: boolean = true;
+  dateDiff: string;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const date = fromUnixTime(this.comment.time);
+    this.dateDiff = formatDistance(date, new Date()) + ' ago';
+  }
 
   setClasses(text) {
     if (text && text.length > 130) {

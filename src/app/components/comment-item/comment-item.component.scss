@@ -1,5 +1,11 @@
 .comment-author {
   font-weight: bold;
+
+  span {
+    color: #555;
+    font-size: 0.8rem;
+    font-weight: lighter;
+  }
 }
 
 .comment-text {
@@ -7,11 +13,6 @@
     max-height: 48px;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
-
-    // &:hover {
-    //   max-height: 800px;
-    //   transition: max-height 0.5s ease-in;
-    // }
   }
 }
 

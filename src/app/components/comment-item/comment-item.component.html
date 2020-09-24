@@ -1,5 +1,7 @@
 <div>
-  <p class="comment-author">{{ comment.by }}</p>
+  <p class="comment-author">
+    {{ comment.by }}<span> — {{ this.dateDiff }}</span>
+  </p>
   <p [innerHtml]="comment.text" [ngClass]="setClasses(comment.text)"></p>
   <a
     class="read-more"
