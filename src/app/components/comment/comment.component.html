@@ -1,0 +1,5 @@
+<div class="comment-item" *ngFor="let comment of commentsToShow">
+  <p class="comment-author">{{ comment.by }}</p>
+  <p [innerHtml]="comment.text" class="comment-text"></p>
+  <app-comment *ngIf="comment.kids" [comments]="comment.kids"></app-comment>
+</div>

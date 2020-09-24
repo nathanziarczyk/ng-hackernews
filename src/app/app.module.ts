@@ -8,9 +8,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsListItemComponent } from './components/news-list-item/news-list-item.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NewsListComponent, NewsListItemComponent, WrapperComponent],
+  declarations: [AppComponent, HeaderComponent, NewsListComponent, NewsListItemComponent, WrapperComponent, CommentComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

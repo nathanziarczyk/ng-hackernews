@@ -5,4 +5,7 @@
     </a>
   </h2>
   <small>By: {{ newsItem.by }}</small>
+  <div class="comment-section">
+    <app-comment *ngIf="newsItem.kids" [comments]="newsItem.kids"></app-comment>
+  </div>
 </div>
