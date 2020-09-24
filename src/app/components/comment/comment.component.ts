@@ -22,8 +22,9 @@ export class CommentComponent implements OnInit {
   }
 
   resolveObservables() {
-    const resolveThis = this.commentObservables.slice(0, 1);
-    this.commentObservables = this.commentObservables.slice(1);
+    const rand = Math.floor(Math.random() * 2) + 1;
+    const resolveThis = this.commentObservables.slice(0, rand);
+    this.commentObservables = this.commentObservables.slice(rand);
     forkJoin(resolveThis).subscribe((res) => {
       const comments = Object.values(res);
       this.commentsToShow = comments;
