@@ -1,0 +1,11 @@
+<div>
+  <p class="comment-author">{{ comment.by }}</p>
+  <p [innerHtml]="comment.text" [ngClass]="setClasses(comment.text)"></p>
+  <a
+    class="read-more"
+    *ngIf="comment.text.length > 130"
+    (click)="handleReadMore()"
+    >{{ collapsed ? "More" : "Less" }}</a
+  >
+  <app-comment *ngIf="comment.kids" [comments]="comment.kids"></app-comment>
+</div>

@@ -12,6 +12,10 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
+  getComment(commentId) {
+    return this.http.get(`${this.baseUrl}item/${commentId}.json`);
+  }
+
   getNews(): Observable<number[]> {
     return this.http.get<number[]>(`${this.baseUrl}${this.soort}stories.json`);
   }

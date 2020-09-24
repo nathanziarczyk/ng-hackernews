@@ -1,0 +1,5 @@
+<div *ngFor="let comment of commentsToShow">
+  <div class="comment-item" *ngIf="comment.text">
+    <app-comment-item [comment]="comment"></app-comment-item>
+  </div>
+</div>
