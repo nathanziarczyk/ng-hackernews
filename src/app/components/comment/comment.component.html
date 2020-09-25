@@ -1,5 +1,18 @@
-<div *ngFor="let comment of commentsToShow">
-  <div class="comment-item" *ngIf="comment.text">
-    <app-comment-item [comment]="comment"></app-comment-item>
+<p
+  class="show-comments-btn"
+  *ngIf="!commentsToShow && !loading"
+  (click)="resolveObservables()"
+>
+  + Show {{ comments.length }} comments
+</p>
+<div class="spinner" *ngIf="loading"></div>
+<div *ngIf="commentsToShow && !loading">
+  <p class="show-comments-btn" (click)="hideComments()">
+    - Hide {{ commentsToShow.length }} comments
+  </p>
+  <div *ngFor="let comment of commentsToShow">
+    <div class="comment-item" *ngIf="comment.text">
+      <app-comment-item [comment]="comment"></app-comment-item>
+    </div>
   </div>
 </div>

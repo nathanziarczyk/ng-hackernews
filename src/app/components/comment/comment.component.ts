@@ -11,6 +11,7 @@ export class CommentComponent implements OnInit {
   @Input() comments;
   commentObservables = [];
   commentsToShow: any[];
+  loading: boolean = false;
 
   constructor(private newsService: NewsService) {}
 
@@ -18,16 +19,22 @@ export class CommentComponent implements OnInit {
     this.comments.forEach((commentId) => {
       this.commentObservables.push(this.newsService.getComment(commentId));
     });
+  }
+
+  showComments() {
     this.resolveObservables();
   }
 
+  hideComments() {
+    this.commentsToShow = undefined;
+  }
+
   resolveObservables() {
-    const rand = Math.floor(Math.random() * 2) + 1;
-    const resolveThis = this.commentObservables.slice(0, rand);
-    this.commentObservables = this.commentObservables.slice(rand);
-    forkJoin(resolveThis).subscribe((res) => {
+    this.loading = true;
+    forkJoin(this.commentObservables).subscribe((res) => {
       const comments = Object.values(res);
       this.commentsToShow = comments;
+      this.loading = false;
     });
   }
 }
