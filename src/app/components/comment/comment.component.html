@@ -1,7 +1,7 @@
 <p
   class="show-comments-btn"
   *ngIf="!commentsToShow && !loading"
-  (click)="resolveObservables()"
+  (click)="showComments()"
 >
   + Show {{ comments.length }} comments
 </p>

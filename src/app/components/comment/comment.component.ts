@@ -12,6 +12,7 @@ export class CommentComponent implements OnInit {
   commentObservables = [];
   commentsToShow: any[];
   loading: boolean = false;
+  cachedComments: object[];
 
   constructor(private newsService: NewsService) {}
 
@@ -22,10 +23,15 @@ export class CommentComponent implements OnInit {
   }
 
   showComments() {
-    this.resolveObservables();
+    if (this.cachedComments) {
+      this.commentsToShow = this.cachedComments;
+    } else {
+      this.resolveObservables();
+    }
   }
 
   hideComments() {
+    this.cachedComments = this.commentsToShow;
     this.commentsToShow = undefined;
   }
 
