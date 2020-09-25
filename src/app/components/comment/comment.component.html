@@ -1,5 +1,5 @@
 <p
-  class="show-comments-btn"
+  class="show-hide-comments-btn"
   *ngIf="!commentsToShow && !loading"
   (click)="showComments()"
 >
@@ -7,7 +7,7 @@
 </p>
 <div class="spinner" *ngIf="loading"></div>
 <div *ngIf="commentsToShow && !loading">
-  <p class="show-comments-btn" (click)="hideComments()">
+  <p class="show-hide-comments-btn" (click)="hideComments()">
     - Hide {{ commentsToShow.length }} comments
   </p>
   <div *ngFor="let comment of commentsToShow">
